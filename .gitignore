@@ -3,6 +3,10 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Personal portfolio data - private
+PersonalPortfolios/
+PersonalPortfolios/*.json
+
 # C extensions
 *.so
 

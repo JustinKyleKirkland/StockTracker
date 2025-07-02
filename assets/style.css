@@ -1,0 +1,606 @@
+/* Custom CSS for Stock Tracker Application */
+
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Base styling */
+:root {
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --card-bg: #ffffff;
+    --header-color: #1a1a1a;
+    --border-color: #e9ecef;
+    --hover-bg: #f1f3f5;
+    --input-border: #ced4da;
+    --button-bg: #4051b5;
+    --button-hover: #303f9f;
+    --button-active: #283593;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --stock-info-bg: #f8f9fa;
+    --th-bg: #f8f9fa;
+}
+
+body.dark-mode {
+    --background-color: #1a1a2e;
+    --text-color: #e6e6e6;
+    --card-bg: #16213e;
+    --header-color: #ffffff;
+    --border-color: #30475e;
+    --hover-bg: #222f5b;
+    --input-border: #30475e;
+    --button-bg: #4361ee;
+    --button-hover: #3a56d4;
+    --button-active: #2c4cc0;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --stock-info-bg: #16213e;
+    --th-bg: #222f5b;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease;
+}
+
+/* KPI cards styling */
+.kpi-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.kpi-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    flex: 1 1 180px;
+    min-width: 180px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.kpi-card h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.kpi-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* News section styling */
+.news-section {
+    margin-top: 30px;
+}
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.news-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.news-card {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.news-card:hover {
+    background-color: var(--hover-bg);
+}
+
+.news-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.news-thumbnail-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+
+.news-content {
+    flex: 1;
+}
+
+.news-title {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.news-meta {
+    display: flex;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.no-news {
+    padding: 20px;
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.section-header {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+/* Application container */
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    border-radius: 8px;
+}
+
+/* Header styling */
+.app-header {
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.app-header h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 2.2rem;
+    color: var(--header-color);
+    margin: 0;
+}
+
+/* Tabs styling */
+.dash-tabs {
+    margin-bottom: 20px;
+}
+
+.dash-tab {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 4px 4px 0 0;
+    border: none;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.dash-tab--selected {
+    background-color: var(--card-bg);
+    border-top: 3px solid var(--button-bg);
+    border-bottom: none;
+}
+
+/* Card styling */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-header {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--header-color);
+}
+
+/* Form elements */
+input, button, select, .Select-control {
+    font-family: 'Inter', sans-serif;
+    border-radius: 4px;
+    border: 1px solid var(--input-border);
+    padding: 8px 12px;
+    font-size: 1rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.3s ease;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+input:focus, .Select-control:focus {
+    border-color: var(--button-bg);
+    box-shadow: 0 0 0 0.2rem rgba(64, 81, 181, 0.25);
+    outline: 0;
+}
+
+/* Button styling */
+button {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+button:active {
+    background-color: var(--button-active);
+}
+
+/* Dropdowns */
+.dash-dropdown .Select-control {
+    border-radius: 4px;
+}
+
+.dash-dropdown .Select-menu-outer {
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Stock info styling */
+.stock-info {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: var(--stock-info-bg);
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.stock-info h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--header-color);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--th-bg);
+    font-weight: 600;
+    color: var(--header-color);
+}
+
+tr:hover {
+    background-color: var(--hover-bg);
+    transition: background-color 0.2s;
+}
+
+/* Graph container */
+.graph-container {
+    margin: 20px 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    input, select, .dash-dropdown {
+        width: 100%;
+    }
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 8px;
+    background: var(--card-bg);
+    border-radius: 50%;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+/* Select dropdown styling */
+.Select-control {
+    background-color: var(--card-bg) !important;
+    border-color: var(--input-border) !important;
+}
+
+.Select-menu-outer {
+    background-color: var(--card-bg) !important;
+    border-color: var(--input-border) !important;
+}
+
+.Select-option {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+.Select-option.is-focused {
+    background-color: var(--hover-bg) !important;
+}
+
+.Select-value-label {
+    color: var(--text-color) !important;
+}
+
+/* Dropdown enhancements for dark mode */
+.Select-placeholder,
+.Select--single > .Select-control .Select-value {
+    color: var(--text-color) !important;
+}
+
+/* Portfolio table enhancements */
+.portfolio-table {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+.portfolio-table th {
+    background-color: var(--button-bg);
+    color: white;
+    font-weight: 500;
+}
+
+/* Transition effects for smoother dark mode toggle */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Tooltip styling */
+.dash-tooltip {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Chart enhancements */
+.js-plotly-plot .plotly .modebar {
+    background-color: transparent !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn path {
+    fill: var(--text-color) !important;
+}
+
+/* Add a subtle gradient to the header */
+.app-header {
+    background: linear-gradient(to right, var(--card-bg), var(--background-color));
+    padding: 25px;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Positive and negative values */
+.positive-value {
+    color: #00c853;
+    font-weight: 500;
+}
+
+.negative-value {
+    color: #ff3d00;
+    font-weight: 500;
+}
+
+body.dark-mode .positive-value {
+    color: #00e676;
+}
+
+body.dark-mode .negative-value {
+    color: #ff5252;
+}
+
+/* Improve dark mode for Dash components */
+body.dark-mode .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner th {
+    background-color: var(--th-bg);
+    color: var(--header-color);
+}
+
+body.dark-mode .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+/* Transitions for smooth theme switching */
+* {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Enhanced dark mode styling */
+/* Tab styling for dark mode */
+body.dark-mode .dash-tab {
+    background-color: #151c30;  /* Darker than the main background */
+    color: #adb5bd;  /* Light grey text for better visibility */
+    border: 1px solid #30475e;
+    border-bottom: none;
+    transition: all 0.2s ease;
+}
+
+body.dark-mode .dash-tab:hover {
+    background-color: #1d2741;  /* Slightly lighter on hover */
+    color: #e6e6e6;  /* Brighter text on hover */
+}
+
+body.dark-mode .dash-tab--selected {
+    background-color: var(--card-bg);  /* Match the card background */
+    color: #ffffff;  /* Bright white text for selected tab */
+    border-top: 3px solid #4361ee;
+    border-left: 1px solid #30475e;
+    border-right: 1px solid #30475e;
+    border-bottom: none;
+    box-shadow: 0 -3px 10px rgba(67, 97, 238, 0.15);
+}
+
+body.dark-mode .dash-tabs {
+    border-bottom: 1px solid #30475e;
+}
+
+body.dark-mode .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode button {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Make the toggle button more visible in dark mode */
+body.dark-mode .dark-mode-toggle {
+    background-color: #222f5b;
+    box-shadow: 0 2px 10px rgba(30, 30, 46, 0.3);
+}
+
+/* Improve readability of Plotly chart hover info in dark mode */
+body.dark-mode .js-plotly-plot .plotly .modebar,
+body.dark-mode .js-plotly-plot .plotly .modebar-btn {
+    background: #16213e !important;
+}
+
+body.dark-mode .js-plotly-plot .plotly .modebar-btn:hover {
+    background: #222f5b !important;
+}
+
+/* Improve dark mode text readability */
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4 {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Portfolio summary styling */
+.portfolio-summary-container {
+    margin-top: 10px;
+}
+
+.summary-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    flex: 1 1 180px;
+    min-width: 180px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.summary-card h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.summary-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Status messages */
+.success-message {
+    color: #00c853;
+    padding: 10px 0;
+    font-weight: 500;
+}
+
+.error-message {
+    color: #f44336;
+    padding: 10px 0;
+    font-weight: 500;
+}
+
+.warning-message {
+    color: #ff9800;
+    padding: 10px 0;
+    font-weight: 500;
+}
+
+/* Remove button */
+.remove-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.remove-btn:hover {
+    background-color: #d32f2f;
+}
